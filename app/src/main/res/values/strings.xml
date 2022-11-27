@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">ac-tranreq</string>
+    <string name="gelicon_logo">gelicon_logo</string>
+    <string name="add_text">Добавить</string>
+    <string name="list_text">Список</string>
+    <string name="main_text">Главная</string>
+    <string name="app_text">Заявки</string>
+    <string name="tplus_text">Т Плюс</string>
+    <string name="tab_list">Список вкладок</string>
+    <string name="null_description">null description</string>
+</resources>
