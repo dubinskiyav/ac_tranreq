@@ -8,4 +8,5 @@
     <string name="tplus_text">Т Плюс</string>
     <string name="tab_list">Список вкладок</string>
     <string name="null_description">null description</string>
+    <string name="request_code">Код типа заявки:</string>
 </resources>
