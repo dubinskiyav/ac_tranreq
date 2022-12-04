@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -16,57 +15,57 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import biz.gelicon.ac_tranreq.R;
-import biz.gelicon.ac_tranreq.model.Requesttype;
+import biz.gelicon.ac_tranreq.model.tranreqtype;
 
-public class RequerttypeAdapter extends RecyclerView.Adapter<RequerttypeAdapter.RequesttypeViewHolder> {
+public class RequerttypeAdapter extends RecyclerView.Adapter<RequerttypeAdapter.tranreqtypeViewHolder> {
 
     Context context;
-    List<Requesttype> requesttypes;
+    List<tranreqtype> tranreqtypes;
 
-    public RequerttypeAdapter(Context context, List<Requesttype> requesttypes) {
+    public RequerttypeAdapter(Context context, List<tranreqtype> tranreqtypes) {
         this.context = context;
-        this.requesttypes = requesttypes;
+        this.tranreqtypes = tranreqtypes;
     }
 
     @NonNull
     @Override
-    public RequesttypeViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public tranreqtypeViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         // Указываем, какой дизайн будем использовать для отображения всех элементов
-        View requesttypeItems = LayoutInflater.from(context).inflate(R.layout.requesttype_item, parent, false);
-        return new RequerttypeAdapter.RequesttypeViewHolder(requesttypeItems);
+        View tranreqtypeItems = LayoutInflater.from(context).inflate(R.layout.tranreqtype_item, parent, false);
+        return new RequerttypeAdapter.tranreqtypeViewHolder(tranreqtypeItems);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RequesttypeViewHolder holder, int position) {
-        holder.requesttypeBg.setCardBackgroundColor(Color.parseColor(requesttypes.get(position).getColor()));
+    public void onBindViewHolder(@NonNull tranreqtypeViewHolder holder, int position) {
+        holder.tranreqtypeBg.setCardBackgroundColor(Color.parseColor(tranreqtypes.get(position).getColor()));
 
-        int imageId = context.getResources().getIdentifier("ic_" + requesttypes.get(position).getImg(), "drawable", context.getPackageName());
-        holder.requesttypeImage.setImageResource(imageId);
+        int imageId = context.getResources().getIdentifier("ic_" + tranreqtypes.get(position).getImg(), "drawable", context.getPackageName());
+        holder.tranreqtypeImage.setImageResource(imageId);
 
-        holder.requesttypeName.setText(requesttypes.get(position).getName());
-        holder.requesttypeCode.setText(requesttypes.get(position).getCode());
+        holder.tranreqtypeName.setText(tranreqtypes.get(position).getName());
+        holder.tranreqtypeCode.setText(tranreqtypes.get(position).getCode());
 
     }
 
     @Override
     public int getItemCount() {
-        return requesttypes.size();
+        return tranreqtypes.size();
     }
 
-    public static final class RequesttypeViewHolder extends RecyclerView.ViewHolder {
+    public static final class tranreqtypeViewHolder extends RecyclerView.ViewHolder {
 
-        CardView requesttypeBg; // Нижний слой модели, в нем будем менять фон
-        ImageView requesttypeImage; // Изображение, которое будем ментья
-        TextView requesttypeName;
-        TextView requesttypeCode;
+        CardView tranreqtypeBg; // Нижний слой модели, в нем будем менять фон
+        ImageView tranreqtypeImage; // Изображение, которое будем ментья
+        TextView tranreqtypeName;
+        TextView tranreqtypeCode;
 
-        public RequesttypeViewHolder(@NonNull View itemView) {
+        public tranreqtypeViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            requesttypeBg = itemView.findViewById(R.id.requesttypeBg);
-            requesttypeImage = itemView.findViewById(R.id.requesttypeImage);
-            requesttypeName = itemView.findViewById(R.id.requesttypeName);
-            requesttypeCode = itemView.findViewById(R.id.requesttypeCode);
+            tranreqtypeBg = itemView.findViewById(R.id.tranreqtypeBg);
+            tranreqtypeImage = itemView.findViewById(R.id.tranreqtypeImage);
+            tranreqtypeName = itemView.findViewById(R.id.tranreqtypeName);
+            tranreqtypeCode = itemView.findViewById(R.id.tranreqtypeCode);
 
         }
     }

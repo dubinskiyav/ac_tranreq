@@ -124,7 +124,7 @@
         tools:listitem="@layout/tab_item" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/requesttypeRecycler"
+        android:id="@+id/tranreqtypeRecycler"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="40dp"

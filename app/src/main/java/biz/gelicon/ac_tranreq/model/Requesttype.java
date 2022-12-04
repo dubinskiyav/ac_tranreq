@@ -1,13 +1,13 @@
 package biz.gelicon.ac_tranreq.model;
 
-public class Requesttype {
+public class tranreqtype {
     int id;
     String code;
     String name;
     String img;
     String color;
 
-    public Requesttype(int id, String code, String name, String img, String color) {
+    public tranreqtype(int id, String code, String name, String img, String color) {
         this.id = id;
         this.code = code;
         this.name = name;

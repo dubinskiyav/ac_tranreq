@@ -9,4 +9,5 @@
     <string name="tab_list">Список вкладок</string>
     <string name="null_description">null description</string>
     <string name="request_code">Код типа заявки:</string>
+    <string name="tranreqtype_desc">Это заявка вот такого типа. Если вы ее закажете, она будет выполнена.</string>
 </resources>
