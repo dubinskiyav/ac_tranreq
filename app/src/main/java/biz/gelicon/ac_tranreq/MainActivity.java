@@ -9,7 +9,7 @@ import android.os.Bundle;
 import java.util.ArrayList;
 import java.util.List;
 
-import biz.gelicon.ac_tranreq.adapter.RequerttypeAdapter;
+import biz.gelicon.ac_tranreq.adapter.TranreqtypeAdapter;
 import biz.gelicon.ac_tranreq.adapter.TabAdapter;
 import biz.gelicon.ac_tranreq.model.tranreqtype;
 import biz.gelicon.ac_tranreq.model.Tab;
@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     TabAdapter tabAdapter;
 
     RecyclerView tranreqtypeRecycler;
-    RequerttypeAdapter requerttypeAdapter;
+    TranreqtypeAdapter tranreqtypeAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,11 +38,11 @@ public class MainActivity extends AppCompatActivity {
         setTabRecycler(tabList);
 
         List<tranreqtype> tranreqtypeList = new ArrayList<>();
-        tranreqtypeList.add(new tranreqtype(20011, "01", "Плановая", "schedule", "#C0C0C0"));
-        tranreqtypeList.add(new tranreqtype(20012, "02", "Аварийная", "crash", "#A52A2A"));
-        tranreqtypeList.add(new tranreqtype(20013, "03", "Срочная", "urgent", "#FF1493"));
-        tranreqtypeList.add(new tranreqtype(20014, "04", "Дежурство на дому", "house", "#00FF7F"));
-        tranreqtypeList.add(new tranreqtype(20015, "05", "Командировка", "trip", "#ADD8E6"));
+        tranreqtypeList.add(new tranreqtype(20011, "01", "Плановая", "schedule", "#C0C0C0", "Плановая Плановая"));
+        tranreqtypeList.add(new tranreqtype(20012, "02", "Аварийная", "crash", "#A52A2A", "Аварийная Аварийная"));
+        tranreqtypeList.add(new tranreqtype(20013, "03", "Срочная", "urgent", "#FF1493", "Срочная Срочная"));
+        tranreqtypeList.add(new tranreqtype(20014, "04", "Дежурство на дому", "house", "#00FF7F", "Дежурство на дому Дежурство на дому"));
+        tranreqtypeList.add(new tranreqtype(20015, "05", "Командировка", "trip", "#ADD8E6", "Командировка Командировка"));
 
         settranreqtypeRecycler(tranreqtypeList);
 
@@ -56,8 +56,8 @@ public class MainActivity extends AppCompatActivity {
         tranreqtypeRecycler = findViewById(R.id.tranreqtypeRecycler);
         tranreqtypeRecycler.setLayoutManager(layoutManager);
 
-        requerttypeAdapter = new RequerttypeAdapter(this, tranreqtypeList);
-        tranreqtypeRecycler.setAdapter(requerttypeAdapter);
+        tranreqtypeAdapter = new TranreqtypeAdapter(this, tranreqtypeList);
+        tranreqtypeRecycler.setAdapter(tranreqtypeAdapter);
     }
 
     private void setTabRecycler(List<Tab> tabList) {

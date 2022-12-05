@@ -6,13 +6,15 @@ public class tranreqtype {
     String name;
     String img;
     String color;
+    String text;
 
-    public tranreqtype(int id, String code, String name, String img, String color) {
+    public tranreqtype(int id, String code, String name, String img, String color, String text) {
         this.id = id;
         this.code = code;
         this.name = name;
         this.img = img;
         this.color = color;
+        this.text = text;
     }
 
     public void setId(int id) {
@@ -53,5 +55,13 @@ public class tranreqtype {
 
     public String getColor() {
         return color;
+    }
+
+    public void setText(String text) {
+        this.text = text;
+    }
+
+    public String getText() {
+        return text;
     }
 }

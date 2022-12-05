@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/black"
     android:id="@+id/tranreqtypePageBg"
-    tools:context=".tranreqtypePage">
+    tools:context=".TranreqtypePage">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
@@ -79,8 +79,9 @@
         android:id="@+id/tranreqtypePageImage"
         android:layout_width="0dp"
         android:layout_height="330dp"
-        android:scaleType="centerCrop"
         android:contentDescription="@string/null_description"
+        android:scaleType="centerCrop"
+        android:transitionName="tranreqimage"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/constraintLayout"
         app:layout_constraintTop_toTopOf="parent"
@@ -93,7 +94,7 @@
         android:layout_marginTop="2dp"
         android:fontFamily="@font/montserrat"
         android:gravity="center"
-        android:text="@string/app_text"
+        android:text="@string/tranreqtype_title"
         android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -104,6 +105,7 @@
         android:id="@+id/tranreqtypePageBg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        app:cardElevation="0dp"
         app:cardBackgroundColor="@android:color/transparent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/constraintLayout"
@@ -125,7 +127,7 @@
                 android:textSize="20sp" />
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="235dp"
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
 
