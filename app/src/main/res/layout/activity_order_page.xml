@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/mainBgColor"
-    tools:context=".MainActivity">
+    tools:context=".OrderPage">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
@@ -60,7 +60,7 @@
             android:id="@+id/add"
             android:layout_width="100dp"
             android:layout_height="150dp"
-            android:fontFamily="@font/montserrat_bold"
+            android:fontFamily="@font/montserrat"
             android:gravity="center"
             android:rotation="270"
             android:text="@string/add_text"
@@ -100,53 +100,17 @@
         app:layout_constraintStart_toEndOf="@+id/app_text"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/imageViewAllCategory"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="@string/null_description"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        app:layout_constraintStart_toEndOf="@+id/constraintLayout"
-        app:layout_constraintTop_toBottomOf="@+id/app_text"
-        app:srcCompat="@drawable/ic_filter" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/tabRecycler"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="15dp"
-        android:contentDescription="@string/tab_list"
-        app:layout_constraintBottom_toBottomOf="@+id/imageViewAllCategory"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageViewAllCategory"
-        app:layout_constraintTop_toTopOf="@+id/imageViewAllCategory"
-        app:layout_constraintVertical_bias="0.523"
-        tools:listitem="@layout/tab_item" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/tranreqtypeRecycler"
+    <ListView
+        android:id="@+id/orders_list"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="40dp"
         android:layout_marginTop="20dp"
-        android:layout_marginBottom="120dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/constraintLayout"
-        app:layout_constraintTop_toBottomOf="@+id/tabRecycler" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="@string/null_description"
-        android:onClick="openShoppingCard"
-        android:text="@string/basket"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/constraintLayout"
-        app:layout_constraintTop_toBottomOf="@+id/tranreqtypeRecycler"
-        tools:ignore="DuplicateSpeakableTextCheck" />
+        app:layout_constraintTop_toBottomOf="@+id/tplus_text" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

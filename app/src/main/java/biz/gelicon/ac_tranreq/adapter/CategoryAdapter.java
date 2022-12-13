@@ -11,17 +11,18 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
+import biz.gelicon.ac_tranreq.MainActivity;
 import biz.gelicon.ac_tranreq.R;
 import biz.gelicon.ac_tranreq.model.Tab;
 
-public class TabAdapter extends RecyclerView.Adapter<TabAdapter.TabViewHolder> {
+public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.TabViewHolder> {
 
     Context context;
-    List<Tab> tabs;
+    List<Tab> categories;
 
-    public TabAdapter(Context context, List<Tab> tabs) {
+    public CategoryAdapter(Context context, List<Tab> categories) {
         this.context = context;
-        this.tabs = tabs;
+        this.categories = categories;
     }
 
     @NonNull
@@ -33,13 +34,23 @@ public class TabAdapter extends RecyclerView.Adapter<TabAdapter.TabViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull TabViewHolder holder, int position) {
-        holder.tabTitle.setText(tabs.get(position).getTitle());
+        holder.tabTitle.setText(categories.get(position).getTitle());
+
+        // Обработчик нажатия
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            // При нажатии на категорию вызываем show...
+            // и передаем id той категории, на которую нажали
+            @Override
+            public void onClick(View view) {
+                MainActivity.showTranreqByCategory(categories.get(position).getId());
+            }
+        });
 
     }
 
     @Override
     public int getItemCount() {
-        return tabs.size();
+        return categories.size();
     }
 
     public static final class TabViewHolder extends RecyclerView.ViewHolder {

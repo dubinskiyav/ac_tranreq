@@ -21,16 +21,16 @@ import java.util.List;
 
 import biz.gelicon.ac_tranreq.R;
 import biz.gelicon.ac_tranreq.TranreqtypePage;
-import biz.gelicon.ac_tranreq.model.tranreqtype;
+import biz.gelicon.ac_tranreq.model.Tranreqtype;
 
 public class TranreqtypeAdapter extends RecyclerView.Adapter<TranreqtypeAdapter.tranreqtypeViewHolder> {
 
     Context context;
-    List<tranreqtype> tranreqtypes;
+    List<Tranreqtype> Tranreqtypes;
 
-    public TranreqtypeAdapter(Context context, List<tranreqtype> tranreqtypes) {
+    public TranreqtypeAdapter(Context context, List<Tranreqtype> Tranreqtypes) {
         this.context = context;
-        this.tranreqtypes = tranreqtypes;
+        this.Tranreqtypes = Tranreqtypes;
     }
 
     @NonNull
@@ -43,13 +43,13 @@ public class TranreqtypeAdapter extends RecyclerView.Adapter<TranreqtypeAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull tranreqtypeViewHolder holder, @SuppressLint("RecyclerView") int position) {
-        holder.tranreqtypeBg.setCardBackgroundColor(Color.parseColor(tranreqtypes.get(position).getColor()));
+        holder.tranreqtypeBg.setCardBackgroundColor(Color.parseColor(Tranreqtypes.get(position).getColor()));
 
-        int imageId = context.getResources().getIdentifier("ic_" + tranreqtypes.get(position).getImg(), "drawable", context.getPackageName());
+        int imageId = context.getResources().getIdentifier("ic_" + Tranreqtypes.get(position).getImg(), "drawable", context.getPackageName());
         holder.tranreqtypeImage.setImageResource(imageId);
 
-        holder.tranreqtypeName.setText(tranreqtypes.get(position).getName());
-        holder.tranreqtypeCode.setText(tranreqtypes.get(position).getCode());
+        holder.tranreqtypeName.setText(Tranreqtypes.get(position).getName());
+        holder.tranreqtypeCode.setText(Tranreqtypes.get(position).getCode());
 
         // Обработчик события на элемент списка (на itemView)
         holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -65,11 +65,12 @@ public class TranreqtypeAdapter extends RecyclerView.Adapter<TranreqtypeAdapter.
 
                 // Передадим данные
                 // Цвет берем такой же, какой установили для жлемента списка
-                intent.putExtra("tranreqtypeBg", Color.parseColor(tranreqtypes.get(position).getColor()));
+                intent.putExtra("tranreqtypeBg", Color.parseColor(Tranreqtypes.get(position).getColor()));
                 intent.putExtra("tranreqtypeImage", imageId);
-                intent.putExtra("tranreqtypeName", tranreqtypes.get(position).getName());
-                intent.putExtra("tranreqtypeCode", tranreqtypes.get(position).getCode());
-                intent.putExtra("tranreqtypeText", tranreqtypes.get(position).getText());
+                intent.putExtra("tranreqtypeName", Tranreqtypes.get(position).getName());
+                intent.putExtra("tranreqtypeCode", Tranreqtypes.get(position).getCode());
+                intent.putExtra("tranreqtypeText", Tranreqtypes.get(position).getText());
+                intent.putExtra("tranreqtypeId", Tranreqtypes.get(position).getId());
 
                 context.startActivity(intent, options.toBundle());
             }
@@ -79,7 +80,7 @@ public class TranreqtypeAdapter extends RecyclerView.Adapter<TranreqtypeAdapter.
 
     @Override
     public int getItemCount() {
-        return tranreqtypes.size();
+        return Tranreqtypes.size();
     }
 
     public static final class tranreqtypeViewHolder extends RecyclerView.ViewHolder {

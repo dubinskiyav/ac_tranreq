@@ -4,8 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import biz.gelicon.ac_tranreq.model.Order;
 
 public class TranreqtypePage extends AppCompatActivity {
 
@@ -28,5 +32,11 @@ public class TranreqtypePage extends AppCompatActivity {
         tranreqtypePageName.setText(getIntent().getStringExtra("tranreqtypeName"));
         tranreqtypePageCode.setText(getIntent().getStringExtra("tranreqtypeCode"));
         tranreqtypeText.setText(getIntent().getStringExtra("tranreqtypeText"));
+    }
+
+    public void addToCard(View view) {
+        int item_id = getIntent().getIntExtra("tranreqtypeId", 0);
+        Order.items_id.add(item_id);
+        Toast.makeText(this, "Добавлено! :", Toast.LENGTH_LONG).show();
     }
 }
